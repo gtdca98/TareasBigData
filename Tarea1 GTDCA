@@ -1,0 +1,20 @@
+Tarea 1 GTDCA
+
+###  1309 registros en los dos archivos csv
+grep '"'  -h *csv | cut -d '"' -f2 > titanic.txt
+
+### proceso de 1214 registros distintos de Mrs
+grep "Mrs\. " titanic.txt -v | cut -d'"' -f2 | cut -d ',' -f1 > seg2
+grep "Mrs\. " titanic.txt -v | cut -d'"' -f2 | cut -d ',' -f2 | cut -d "(" -f1  > seg1
+paste -d ' ' seg1 seg2 > seg3
+
+### proceso 197 registros correspondientes a Mrs. 
+grep "Mrs\. " titanic.txt  | cut -d'"' -f2 | cut -d ',' -f2 | cut -d'.' -f1 > segA
+grep "Mrs\. " titanic.txt  | cut -d'"' -f2 | cut -d ',' -f2 | cut -d'.' -f2 | cut -d'(' -f2 | cut -d')' -f1  > segB
+paste -d ' ' segA segB > segC
+
+### union de archivos de nombres
+cat  seg3 segC >  titanicnames.txt
+
+La broma... significa "lo que sea"  una expresión regular le puede pasar a otra "cualquier cosa"  :>).
+
