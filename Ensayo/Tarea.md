@@ -1,4 +1,5 @@
 Tarea 1 GTDCA
+=============
 
 los nombres de las personas estan delimitadas por doble comilla
 en el caso de las Señoras los nombres de pila están entre peréntesis. 
